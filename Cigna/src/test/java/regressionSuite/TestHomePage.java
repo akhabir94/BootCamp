@@ -1,0 +1,31 @@
+package regressionSuite;
+
+import base.CommonAPI;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import regression.HomePage;
+
+public class TestHomePage extends CommonAPI {
+    HomePage homePage;
+    String url = "https://www.cigna.com/";
+
+    @BeforeClass
+    public void init(){
+        homePage = PageFactory.initElements(driver,HomePage.class);
+    }
+
+    @AfterMethod
+    public void recap() {
+        driver.get(url);
+    }
+
+    @Test
+    public void clicklogin(){
+
+    }
+
+}
